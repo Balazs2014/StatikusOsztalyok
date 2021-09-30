@@ -34,7 +34,35 @@ public class Veletlen {
     }
 
     public static String velVezeteknev() {
-        //return vezetekNevek.get(rnd.nextInt(vezetekNevek.size()));
-        return vezetekNevek.get(velEgesz(0, vezetekNevek.size() - 1));
+        return vezetekNevek.get(rnd.nextInt(vezetekNevek.size()));
+        //return vezetekNevek.get(velEgesz(0, vezetekNevek.size() - 1));
+    }
+
+    /**
+     * Véletlen keresztnnevet generáló függvény
+     * @param nem a név neme amit szeretnénk generálni: true - férfi, false - nő
+     * @return A generált keresztnév String
+     */
+    public static String velKeresztnev(boolean nem) {
+        String keresztnev = "";
+        if (nem) {
+            keresztnev = ferfikerNevek.get(rnd.nextInt((ferfikerNevek.size())));
+        } else {
+            keresztnev = noikerNevek.get(rnd.nextInt((noikerNevek.size())));
+        }
+
+        return keresztnev;
+    }
+
+    public static String velKeresztnev() {
+        return velKeresztnev(rnd.nextBoolean());
+    }
+
+    public static String velTeljesnev(boolean nem) {
+        return String.format("%s %s", velVezeteknev(), velKeresztnev(nem));
+    }
+
+    public static String velTeljesnev() {
+        return velTeljesnev(rnd.nextBoolean());
     }
 }
