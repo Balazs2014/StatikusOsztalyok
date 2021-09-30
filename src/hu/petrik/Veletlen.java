@@ -32,4 +32,9 @@ public class Veletlen {
     public static char velKarakter(char min, char max) {
         return (char)velEgesz(min, max);
     }
+
+    public static String velVezeteknev() {
+        //return vezetekNevek.get(rnd.nextInt(vezetekNevek.size()));
+        return vezetekNevek.get(velEgesz(0, vezetekNevek.size() - 1));
+    }
 }

@@ -9,8 +9,9 @@ public class Main {
             System.out.print(Veletlen.velEgesz(10, 50) + " ");
         }
         System.out.println();
-        for (int i = 0; i < 30; i++) {
-            System.out.println(Veletlen.velKarakter('a', 'z') + " ");
+        for (int i = 0; i < 20; i++) {
+            System.out.print(Veletlen.velKarakter('a', 'z') + " ");
         }
+        System.out.println();
     }
 }
