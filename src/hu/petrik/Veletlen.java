@@ -11,6 +11,7 @@ public class Veletlen {
     private static Random rnd = new Random();
     private static List<String> vezetekNevek = feltolt("veznev.txt");
     private static List<String> ferfikerNevek = feltolt("ferfikernev.txt");
+    private static List<String> noikerNevek = feltolt("noiikernev.txt");
     private Veletlen() {}
 
     private static List<String> feltolt(String fajlNev) {
@@ -22,5 +23,13 @@ public class Veletlen {
         }
 
         return fajlSorai;
+    }
+
+    public static int velEgesz(int min, int max) {
+        return rnd.nextInt(max - min + 1) + min;
+    }
+
+    public static char velKarakter(char min, char max) {
+        return (char)velEgesz(min, max);
     }
 }
